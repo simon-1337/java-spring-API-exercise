@@ -16,8 +16,9 @@ public class BoredApiClient {
     }
 
     //return type of this function is an object of the class BoredActivity
-    public BoredActivity getActivity() {
+    public BoredActivity getActivity(String type) {
+    	String url = API_URL + "?type=" + type;
     	//getForObject is used to make a GET request to a specified URL and retrieve the response as an object
-        return restTemplate.getForObject(API_URL, BoredActivity.class);
+        return restTemplate.getForObject(url, BoredActivity.class);
     }
 }
